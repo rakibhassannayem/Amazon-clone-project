@@ -111,11 +111,15 @@ document.querySelectorAll('.js-delete-link')
     });
   });
 
-let cartQuantity = 0;
+function updateCartQuantity() {
+  let cartQuantity = 0;
 
-cart.forEach((cartItem) => {
-  cartQuantity += cartItem.quantity;
-});
+  cart.forEach((cartItem) => {
+    cartQuantity += cartItem.quantity;
+  });
 
-document.querySelector('.js-return-t-home-link')
-  .innerHTML = `${cartQuantity} items`;
+  document.querySelector('.js-return-t-home-link')
+    .innerHTML = `${cartQuantity} items`;
+}
+
+updateCartQuantity();
