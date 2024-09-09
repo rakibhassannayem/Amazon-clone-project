@@ -57,8 +57,7 @@ products.forEach((product) => {
     `;
 });
 
-document.querySelector('.js-products-grid')
-  .innerHTML = productsHtml;
+document.querySelector('.js-products-grid').innerHTML = productsHtml;
 
 const addedMessageTimeouts = {};
 
@@ -99,3 +98,4 @@ document.querySelectorAll('.js-add-to-cart')
 
     });
   });
+  
