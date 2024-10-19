@@ -82,7 +82,14 @@ function renderProductsGrid() {
     .forEach((button) => {
       button.addEventListener('click', () => {
         const { productId } = button.dataset;
-        addToCart(productId);
+
+        // Get the selected quantity from the dropdown
+        const quantitySelector = document.querySelector(`.js-quantity-selector-${productId}`);
+        const selectedQuantity = parseInt(quantitySelector.value, 10);
+
+
+        // Pass the selected quantity to addToCart
+        addToCart(productId, selectedQuantity);
         updateCartQuantity();
 
         const addedMessage = document.querySelector(
